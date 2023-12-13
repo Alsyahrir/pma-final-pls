@@ -66,8 +66,10 @@ def main():
     
     st.title("Chest X-Ray Predictor")
     st.markdown("""
-    Welcome to the Chest X-Ray Predictor! Upload a chest X-ray image, and we will predict its diagnosis.
+    # Welcome to the Chest X-Ray Predictor!
     
+    Upload a chest X-ray image, and we will predict its diagnosis.
+
     The diagnosis will be one of the following categories:
     - Viral Pneumonia
     - Covid
