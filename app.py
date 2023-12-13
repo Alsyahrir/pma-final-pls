@@ -60,12 +60,22 @@ def set_background(image_file):
     """
     st.markdown(style, unsafe_allow_html=True)
 
+# Main Streamlit app
 def main():
     set_background('bg5.png')
     
     st.title("Chest X-Ray Predictor")
     st.write("""
-    This web app predicts the diagnosis of chest X-ray images. Upload an image and it will classify it into one of the following categories: 'Viral Pneumonia', 'Covid', 'Normal'.
+    Welcome to the Chest X-Ray Predictor! Upload a chest X-ray image, and we will predict its diagnosis.
+    
+    This app supports the following image formats: JPG, JPEG, and PNG.
+    
+    The diagnosis will be one of the following categories:
+    - Viral Pneumonia
+    - Covid
+    - Normal
+    
+    After uploading an image, the result will be displayed below.
     """)
     
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
