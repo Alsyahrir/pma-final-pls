@@ -87,10 +87,10 @@ def main():
         IMM_SIZE = 224
 
         try:
-            # Get diagnosis and confidence score
-            result= diagnosis(uploaded_file, model, IMM_SIZE)
+            # Get diagnosis
+            result = diagnosis(uploaded_file, model, IMM_SIZE)
 
-            # Display the result and confidence score
+            # Display the result
             st.write("## {}".format(result))
         except Exception as e:
             st.error(f"Error during diagnosis: {e}")
