@@ -65,7 +65,7 @@ def main():
     set_background('bg5.png')
     
     st.title("Chest X-Ray Predictor")
-    st.write("""
+    st.markdown("""
     Welcome to the Chest X-Ray Predictor! Upload a chest X-ray image, and we will predict its diagnosis.
     
     This app supports the following image formats: JPG, JPEG, and PNG.
@@ -77,6 +77,7 @@ def main():
     
     After uploading an image, the result will be displayed below.
     """)
+
     
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
