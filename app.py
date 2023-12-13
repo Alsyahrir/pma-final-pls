@@ -38,6 +38,7 @@ def diagnosis(file, model, IMM_SIZE):
 
     return predicted_diagnosis
 
+
 # Set background function
 def set_background(image_file):
     with open(image_file, "rb") as f:
@@ -85,3 +86,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
