@@ -34,10 +34,7 @@ def diagnosis(file, model, IMM_SIZE):
     diagnosis_mapping = {0: 'Viral Pneumonia', 1: 'Covid', 2: 'Normal'}
     predicted_diagnosis = diagnosis_mapping[predicted_class]
 
-    # Get the confidence score
-    confidence_score = np.max(predicted_probabilities)
-
-    return predicted_diagnosis, confidence_score
+    return predicted_diagnosis
 
 # Function to set the background
 def set_background(image_file):
