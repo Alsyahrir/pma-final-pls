@@ -87,13 +87,12 @@ def main():
         # Specify the image size
         IMM_SIZE = 224
 
-        try:
+         try:
             # Get diagnosis
             result = diagnosis(uploaded_file, model, IMM_SIZE)
 
             # Display the result
-            st.write("## Diagnosis:")
-            st.success(result)
+            st.write("## {}".format(result))
         except Exception as e:
             st.error(f"Error during diagnosis: {e}")
             print("Error during diagnosis:", e)
