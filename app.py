@@ -56,7 +56,7 @@ def set_background(image_file):
 # Main Streamlit app
 def main():
     # Set background
-    set_background('your_background_image.png')
+    set_background('bg5.png')
 
     st.title("Chest X-ray Image Diagnosis App")
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
