@@ -38,28 +38,7 @@ def diagnosis(file, model, IMM_SIZE):
 
     return predicted_diagnosis
 
-
-# Set background function
-def set_background(image_file):
-    with open(image_file, "rb") as f:
-        img_data = f.read()
-    b64_encoded = base64.b64encode(img_data).decode()
-    style = f"""
-        <style>
-        .stApp {{
-            background-image: url(data:image/png;base64,{b64_encoded});
-            background-size: cover;
-        }}
-        </style>
-    """
-    st.markdown(style, unsafe_allow_html=True)
-
-# Main Streamlit app
-def main():
-    # Set background
-    set_background('bg5.png')
-
-    st.title("Chest X-ray Image Diagnosis App")
+    st.title("Chest X-ray Prediction")
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
     if uploaded_file is not None:
