@@ -79,9 +79,11 @@ def main():
         IMM_SIZE = 224
 
         try:
-      # write classification
+            # Get diagnosis
             result = diagnosis(uploaded_file, model, IMM_SIZE)
-            st.write(f"Diagnosis: {result}" )
+
+            # Display the result
+            st.write("## {}".format(result))
         except Exception as e:
             st.error(f"Error during diagnosis: {e}")
             print("Error during diagnosis:", e)
