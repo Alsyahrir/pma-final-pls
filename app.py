@@ -80,7 +80,7 @@ def main():
 
         try:
       # write classification
-            st.write("f"Diagnosis: {result}" )
+            st.write(f"Diagnosis: {result}" )
         except Exception as e:
             st.error(f"Error during diagnosis: {e}")
             print("Error during diagnosis:", e)
