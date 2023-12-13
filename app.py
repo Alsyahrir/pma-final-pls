@@ -72,8 +72,7 @@ def main():
     - Viral Pneumonia
     - Covid
     - Normal
-    
-    After uploading an image, the result will be displayed below.
+
     """)
 
     
