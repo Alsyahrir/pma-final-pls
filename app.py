@@ -80,8 +80,7 @@ def main():
 
         try:
       # write classification
-            st.write("## {}".format(class_name))
-            st.write("### score: {}%".format(int(conf_score * 1000) / 10))
+            st.write("f"Diagnosis: {result}" )
         except Exception as e:
             st.error(f"Error during diagnosis: {e}")
             print("Error during diagnosis:", e)
