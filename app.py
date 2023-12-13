@@ -34,7 +34,10 @@ def diagnosis(file, model, IMM_SIZE):
     diagnosis_mapping = {0: 'Viral Pneumonia', 1: 'Covid', 2: 'Normal'}
     predicted_diagnosis = diagnosis_mapping[predicted_class]
 
-    return predicted_diagnosis
+    # Get the confidence score
+    confidence_score = np.max(predicted_probabilities)
+
+    return predicted_diagnosis, confidence_score
 
 # Function to set the background
 def set_background(image_file):
@@ -66,14 +69,13 @@ def main():
     
     st.title("Chest X-Ray Predictor")
     st.markdown("""
-    # Welcome to the Chest X-Ray Predictor!
+    Welcome to the Chest X-Ray Predictor! Upload a chest X-ray image, and we will predict its diagnosis.
     
-    Upload a chest X-ray image, and we will predict its diagnosis.
-
     The diagnosis will be one of the following categories:
     - Viral Pneumonia
     - Covid
     - Normal
+
     """)
 
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
@@ -88,10 +90,10 @@ def main():
         IMM_SIZE = 224
 
         try:
-            # Get diagnosis
+            # Get diagnosis and confidence score
             result, confidence_score = diagnosis(uploaded_file, model, IMM_SIZE)
 
-            # Display the result
+            # Display the result and confidence score
             st.write("## {}".format(result))
             st.write("## Score: {}%".format(int(confidence_score * 100)))
         except Exception as e:
