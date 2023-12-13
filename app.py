@@ -94,7 +94,7 @@ def main():
             result= diagnosis(uploaded_file, model, IMM_SIZE)
 
             # Display the result and confidence score
-            st.write("## Diagnosis: {}".format(result))
+            st.write("## {}".format(result))
         except Exception as e:
             st.error(f"Error during diagnosis: {e}")
             print("Error during diagnosis:", e)
