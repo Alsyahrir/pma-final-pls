@@ -93,6 +93,7 @@ def main():
 
             # Display the result
             st.write("## {}".format(result))
+             st.write("## Score: {}%".format(int(confidence_score * 100)))
         except Exception as e:
             st.error(f"Error during diagnosis: {e}")
             print("Error during diagnosis:", e)
