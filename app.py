@@ -3,7 +3,6 @@ import base64
 import numpy as np
 from tensorflow.keras.models import model_from_json
 from tensorflow.keras.preprocessing import image
-import pickle
 
 # Function to load the model
 def load_model():
@@ -18,8 +17,6 @@ def load_model():
     model.load_weights('model.h5')
 
     return model
-
-# ...
 
 # Function to make a diagnosis
 def diagnosis(file, model, IMM_SIZE):
@@ -39,9 +36,7 @@ def diagnosis(file, model, IMM_SIZE):
 
     return predicted_diagnosis
 
-# ...
-
-
+# Function to set the background
 def set_background(image_file):
     """
     This function sets the background of a Streamlit app to an image specified by the given image file.
@@ -64,12 +59,10 @@ def set_background(image_file):
         </style>
     """
     st.markdown(style, unsafe_allow_html=True)
-    
+
 # Main Streamlit app
 def main():
-    
     set_background('bg5.png')
-    
     
     st.title("Chest X-ray Image Diagnosis App")
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
@@ -93,39 +86,6 @@ def main():
             st.error(f"Error during diagnosis: {e}")
             print("Error during diagnosis:", e)
 
-# ...
-
-
+# Run the app
 if __name__ == "__main__":
     main()
-
-
-
-
-def set_background(image_file):
-    """
-    This function sets the background of a Streamlit app to an image specified by the given image file.
-
-    Parameters:
-        image_file (str): The path to the image file to be used as the background.
-
-    Returns:
-        None
-    """
-    with open(image_file, "rb") as f:
-        img_data = f.read()
-    b64_encoded = base64.b64encode(img_data).decode()
-    style = f"""
-        <style>
-        .stApp {{
-            background-image: url(data:image/png;base64,{b64_encoded});
-            background-size: cover;
-        }}
-        </style>
-    """
-    st.markdown(style, unsafe_allow_html=True)
-
-
-
-    set_background('bg5.png')
-
