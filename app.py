@@ -89,7 +89,7 @@ def main():
 
         try:
             # Get diagnosis
-            result = diagnosis(uploaded_file, model, IMM_SIZE)
+            result, confidence_score = diagnosis(uploaded_file, model, IMM_SIZE)
 
             # Display the result
             st.write("## {}".format(result))
