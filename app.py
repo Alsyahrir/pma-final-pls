@@ -61,9 +61,7 @@ def set_background(image_file):
     st.markdown(style, unsafe_allow_html=True)
 
 # Main Streamlit app
-# Main Streamlit app
 def main():
-    
     set_background('bg5.png')
     
     st.title("Chest X-Ray Predictor")
@@ -91,4 +89,3 @@ def main():
 # Run the app
 if __name__ == "__main__":
     main()
-
