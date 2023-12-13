@@ -80,6 +80,7 @@ def main():
 
         try:
       # write classification
+            result = diagnosis(uploaded_file, model, IMM_SIZE)
             st.write(f"Diagnosis: {result}" )
         except Exception as e:
             st.error(f"Error during diagnosis: {e}")
