@@ -91,11 +91,10 @@ def main():
 
         try:
             # Get diagnosis and confidence score
-            result, confidence_score = diagnosis(uploaded_file, model, IMM_SIZE)
+            result= diagnosis(uploaded_file, model, IMM_SIZE)
 
             # Display the result and confidence score
             st.write("## Diagnosis: {}".format(result))
-            st.write("## Confidence Score: {}%".format(int(confidence_score * 100)))
         except Exception as e:
             st.error(f"Error during diagnosis: {e}")
             print("Error during diagnosis:", e)
