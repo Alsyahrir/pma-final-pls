@@ -61,19 +61,19 @@ def set_background(image_file):
     st.markdown(style, unsafe_allow_html=True)
 
 # Main Streamlit app
+# Main Streamlit app
 def main():
-    set_background('bg5.png')
-    
     # Use st.set_page_config to configure the Streamlit page
     st.set_page_config(page_title="Chest X-Ray Predictor", page_icon=":microscope:", layout="wide")
+    
+    set_background('bg5.png')
     
     st.title("Chest X-Ray Predictor")
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
     if uploaded_file is not None:
         st.image(uploaded_file, caption="Uploaded Image.", use_column_width=True)
-        st.write("")
-
+        
         # Load the model
         model = load_model()
 
@@ -91,3 +91,4 @@ def main():
 # Run the app
 if __name__ == "__main__":
     main()
+
