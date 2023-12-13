@@ -60,11 +60,14 @@ def set_background(image_file):
     """
     st.markdown(style, unsafe_allow_html=True)
 
-# Main Streamlit app
 def main():
     set_background('bg5.png')
     
     st.title("Chest X-Ray Predictor")
+    st.write("""
+    This web app predicts the diagnosis of chest X-ray images. Upload an image and it will classify it into one of the following categories: 'Viral Pneumonia', 'Covid', 'Normal'.
+    """)
+    
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
     if uploaded_file is not None:
@@ -81,7 +84,8 @@ def main():
             result = diagnosis(uploaded_file, model, IMM_SIZE)
 
             # Display the result
-            st.write("## {}".format(result))
+            st.write("## Diagnosis:")
+            st.success(result)
         except Exception as e:
             st.error(f"Error during diagnosis: {e}")
             print("Error during diagnosis:", e)
