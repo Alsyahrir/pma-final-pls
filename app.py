@@ -79,9 +79,9 @@ def main():
         IMM_SIZE = 224
 
         try:
-            # Get diagnosis
-            result = diagnosis(uploaded_file, model, IMM_SIZE)
-            st.success(f"Diagnosis: {result}")
+      # write classification
+            st.write("## {}".format(class_name))
+            st.write("### score: {}%".format(int(conf_score * 1000) / 10))
         except Exception as e:
             st.error(f"Error during diagnosis: {e}")
             print("Error during diagnosis:", e)
