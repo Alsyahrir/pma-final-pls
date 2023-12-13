@@ -38,10 +38,26 @@ def diagnosis(file, model, IMM_SIZE):
 
     return predicted_diagnosis
 
-# ...
+# Set background function
+def set_background(image_file):
+    with open(image_file, "rb") as f:
+        img_data = f.read()
+    b64_encoded = base64.b64encode(img_data).decode()
+    style = f"""
+        <style>
+        .stApp {{
+            background-image: url(data:image/png;base64,{b64_encoded});
+            background-size: cover;
+        }}
+        </style>
+    """
+    st.markdown(style, unsafe_allow_html=True)
 
 # Main Streamlit app
 def main():
+    # Set background
+    set_background('your_background_image.png')
+
     st.title("Chest X-ray Image Diagnosis App")
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
@@ -59,7 +75,7 @@ def main():
         try:
             # Get diagnosis
             result = diagnosis(uploaded_file, model, IMM_SIZE)
-            st.success(f"Diagnosis": {result}")
+            st.success(f"Diagnosis: {result}")
         except Exception as e:
             st.error(f"Error during diagnosis: {e}")
             print("Error during diagnosis:", e)
