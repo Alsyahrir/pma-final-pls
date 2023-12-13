@@ -64,6 +64,9 @@ def set_background(image_file):
 def main():
     set_background('bg5.png')
     
+    # Use st.set_page_config to configure the Streamlit page
+    st.set_page_config(page_title="Chest X-Ray Predictor", page_icon=":microscope:", layout="wide")
+    
     st.title("Chest X-Ray Predictor")
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
