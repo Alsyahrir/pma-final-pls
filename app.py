@@ -64,7 +64,7 @@ def set_background(image_file):
 def main():
     set_background('bg5.png')
     
-    st.title("Chest X-ray Image Diagnosis App")
+    st.title("Chest X-Ray Predictor")
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
     if uploaded_file is not None:
