@@ -1,4 +1,5 @@
 import streamlit as st
+import base64
 import numpy as np
 from tensorflow.keras.models import model_from_json
 from tensorflow.keras.preprocessing import image
