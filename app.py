@@ -63,8 +63,6 @@ def set_background(image_file):
 # Main Streamlit app
 # Main Streamlit app
 def main():
-    # Use st.set_page_config to configure the Streamlit page
-    st.set_page_config(page_title="Chest X-Ray Predictor", page_icon=":microscope:", layout="wide")
     
     set_background('bg5.png')
     
