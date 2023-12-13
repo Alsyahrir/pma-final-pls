@@ -72,10 +72,8 @@ def main():
     - Viral Pneumonia
     - Covid
     - Normal
-
     """)
 
-    
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
     if uploaded_file is not None:
@@ -87,7 +85,7 @@ def main():
         # Specify the image size
         IMM_SIZE = 224
 
-         try:
+        try:
             # Get diagnosis
             result = diagnosis(uploaded_file, model, IMM_SIZE)
 
