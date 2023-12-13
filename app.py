@@ -59,7 +59,7 @@ def main():
         try:
             # Get diagnosis
             result = diagnosis(uploaded_file, model, IMM_SIZE)
-            st.success(f"The predicted diagnosis is: {result}")
+            st.success(f"Diagnosis": {result}")
         except Exception as e:
             st.error(f"Error during diagnosis: {e}")
             print("Error during diagnosis:", e)
